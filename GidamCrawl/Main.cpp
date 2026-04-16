@@ -1,6 +1,14 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 
 int main(int argc, char argv[])
 {
-	printf("hello, world!");
+	// Game Loop
+	while (true)
+	{
+		// Input Processing
+
+		// Update objects in levels
+
+		// Render
+	}
 }
