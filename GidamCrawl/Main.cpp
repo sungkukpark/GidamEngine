@@ -1,14 +1,13 @@
 ﻿#include <stdio.h>
 
-int main(int argc, char argv[])
+#include "Engine/Engine.h"
+
+using namespace Gidam;
+
+int main(int argc, char* argv[])
 {
-	// Game Loop
-	while (true)
-	{
-		// Input Processing
+	Engine engine;
+	engine.Run();
 
-		// Update objects in levels
-
-		// Render
-	}
+	return 0;
 }

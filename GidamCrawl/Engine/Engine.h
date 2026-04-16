@@ -21,10 +21,13 @@ namespace Gidam
 		// Initialization function
 		void OnInitialized();
 
-		// Update function
+		// Start function
 		void BeginPlay();
 
 		// Render function
+		void Draw();
+
+		// Update function
 		void Tick(float deltaTime);
 
 		// Save the previous function
