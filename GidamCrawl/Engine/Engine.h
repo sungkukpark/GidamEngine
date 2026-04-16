@@ -4,37 +4,58 @@ namespace Gidam
 {
 	class Engine
 	{
+		// 엔진 설정 구조체
+		struct EngineSettings
+		{
+			// 타겟 프레임 속도
+			float framerate = 120.0f;
+		};
+
 	public:
 		Engine();
 		virtual ~Engine();
 
-		// Game Loop execution function
+		// 게임 루프 실행 함수
 		void Run();
 
-		// Engine quit function
+		// 엔진 종료 함수
 		void Quit();
 
+		// 싱글톤 접근 함수
+		static Engine& Get();
+
 	protected:
-		// Input processing function
+		// 입력 처리 함수
 		void ProcessInput();
 
-		// Initialization function
+		// 초기화 함수
+		// 레벨 초기화 함수
 		void OnInitialized();
 
-		// Start function
+		// 액터 초기화 함수
 		void BeginPlay();
 
-		// Render function
-		void Draw();
-
-		// Update function
+		// 업데이트 함수
 		void Tick(float deltaTime);
 
-		// Save the previous function
+		// 화면에 그리는 함수
+		void Draw();
+
+		// 이전 입력을 저장하는 함수
 		void SavePreviousInputStates();
 
-		// Resource release function
+		// 엔진 종료 시 정리 함수
 		void Shutdown();
+
+	protected:
+		// 엔진 설정
+		EngineSettings settings;
+
+		// 엔진 종료 플래그
+		bool isQuit = false;
+
+		// 싱글톤 전역 객체
+		static Engine* instance;
 	};
 }
 
